@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pawnPromotionRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#1e1e1e">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvPromotionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PAWN PROMOTION"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:letterSpacing="0.12"
+        android:fontFamily="@font/chess_premium"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="8dp"/>
+
+    <!-- Piece Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/btnQueen"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_piece_choice"
+            android:scaleType="centerInside"
+            android:contentDescription="Queen"/>
+
+        <ImageButton
+            android:id="@+id/btnRook"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_piece_choice"
+            android:scaleType="centerInside"
+            android:layout_marginStart="12dp"
+            android:contentDescription="Rook"/>
+
+        <ImageButton
+            android:id="@+id/btnBishop"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_piece_choice"
+            android:scaleType="centerInside"
+            android:layout_marginStart="12dp"
+            android:contentDescription="Bishop"/>
+
+        <ImageButton
+            android:id="@+id/btnKnight"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_piece_choice"
+            android:scaleType="centerInside"
+            android:layout_marginStart="12dp"
+            android:contentDescription="Knight"/>
+    </LinearLayout>
+
+</LinearLayout>

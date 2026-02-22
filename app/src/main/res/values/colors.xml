@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange">#FF9800</color>
+    <color name="bg_dark">#1B1F23</color>
+    <color name="gold">#D4AF37</color>
+    <color name="gold_soft">#E6C76A</color>
+
+    <color name="cta_start">#6C5CE7</color>
+    <color name="cta_end">#4B2E83</color>
+    <color name="teal_700">#00796B</color>
+
+
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#C7C7C7</color>
+
+    <color name="dark_wooden">#432505</color>
+    <color name="light_wooden">#E49B5B</color>
+    <color name="purple_700">#512DA8</color>
+
+
+    <color name="light_classic"> #EEEED2 </color>
+    <color name="dark_classic"> #769656 </color>
+
+    <color name="teal_500">#009688</color>
+    <color name="orange_dark">#F57C00</color>
+    <color name="purple_500">#673AB7</color>
+
+    <color name="win">#53AE22</color>
+    <color name="defeat">#98160B</color>
+    <color name="defeat_dark">#53100A</color>
+
+    <color name="light_icy">#D1F8F3</color>
+    <color name="dark_icy">#2C00FFCC</color>
+
+
+
+</resources>

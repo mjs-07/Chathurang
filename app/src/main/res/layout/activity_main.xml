@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_wood_dark"
+    android:alpha="0.75">
+
+    <ImageView
+        android:id="@+id/rootHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.6"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="-25dp"
+        android:background="@drawable/bg_glass_card"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="75dp"
+            android:src="@drawable/logo">
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTitle"
+                android:text="CHATHURANG"
+                android:textColor="@color/gold"
+                android:textSize="34sp"
+                android:fontFamily="@font/chathurang_font"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"/>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Where strategy meets chance"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/center"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"
+        android:visibility="invisible">
+
+    </ImageView>
+
+    <!-- BLACK TIMER (Top Right) -->
+    <include
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/includeBlackTimer"
+        layout="@layout/panel_timer_black"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="110dp"/>
+
+    <!-- Full-screen chessboard (unchanged) -->
+    <com.example.chathurang.ChessBoardView
+        android:id="@+id/chessBoard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- WHITE TIMER (Bottom Right) -->
+    <include
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/includeWhiteTimer"
+        layout="@layout/panel_timer_white"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="575dp" />
+
+    <!-- Bottom horizontal control bar -->
+    <LinearLayout
+        android:id="@+id/bottom_panel"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_panel"
+        android:elevation="10dp"
+        android:layout_margin="7dp">
+
+        <!-- Dice preview -->
+        <ImageView
+            android:id="@+id/ivDice"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/dice_face_1"
+            android:scaleType="centerInside"
+            android:contentDescription="Dice"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="10dp"/>
+
+        <!-- Turn & dice text stacked -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1.6"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvTurn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Turn: White"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvDice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textColor="#DDDDDD"
+                android:textSize="13sp"
+                android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
+
+        <!-- Roll button -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <Button
+                android:id="@+id/btnRoll"
+                android:layout_width="wrap_content"
+                android:layout_weight="1.0"
+                android:layout_height="35dp"
+                android:text="Roll"
+                android:textAllCaps="false"
+                android:textSize="12dp"
+                android:background="@drawable/btn_play_gradient"/>
+
+            <!-- Resign button (replaces Reset) -->
+            <Button
+                android:id="@+id/btnResign"
+                android:layout_width="wrap_content"
+                android:layout_weight="1.0"
+                android:layout_marginTop="12dp"
+                android:layout_height="35dp"
+                android:text="Resign"
+                android:textAllCaps="false"
+                android:textSize="12dp"
+                android:background="@drawable/btn_play_gradient"
+                android:layout_marginEnd="14dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

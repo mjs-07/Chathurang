@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base gradient -->
+    <item
+        android:drawable="@drawable/bg_glass_card"/>
+
+    <!-- Chessboard texture -->
+    <item
+        android:drawable="@drawable/chessboard_faded"
+        android:alpha="5"/>
+
+</layer-list>
