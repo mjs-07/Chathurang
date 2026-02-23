@@ -16,12 +16,18 @@ import android.view.ViewGroup;
 import android.graphics.Color;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.firebase.auth.FirebaseAuth;
+
 
 public class HomeActivity extends AppCompatActivity {
 
 
     ImageView dice;
     private boolean demoLaunched = false;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +53,19 @@ public class HomeActivity extends AppCompatActivity {
             ThemeManager.toggleTheme();
             applyThemeToHome();
         });
+
+        mAuth = FirebaseAuth.getInstance();
+
+        Button btnProfile = findViewById(R.id.btnProfile);
+        Button btnLogout = findViewById(R.id.btnLogout);
+
+        // Open Profile
+        btnProfile.setOnClickListener(v -> {
+            startActivity(new Intent(this, ProfileActivity.class));
+        });
+
+        // Logout
+        btnLogout.setOnClickListener(v -> logoutUser());
 
     }
 
@@ -165,6 +184,34 @@ public class HomeActivity extends AppCompatActivity {
             card.setBackgroundResource(R.drawable.card_selected_bg);
 
             minutes[0] = value;
+        });
+    }
+
+    private void logoutUser() {
+
+        mAuth.signOut();
+
+        GoogleSignInOptions gso =
+                new GoogleSignInOptions.Builder(
+                        GoogleSignInOptions.DEFAULT_SIGN_IN)
+                        .requestEmail()
+                        .build();
+
+        GoogleSignInClient googleSignInClient =
+                GoogleSignIn.getClient(this, gso);
+
+        // Force account removal
+        googleSignInClient.signOut().addOnCompleteListener(task -> {
+
+            // Optional but stronger: revoke access
+            googleSignInClient.revokeAccess().addOnCompleteListener(task1 -> {
+
+                Intent intent = new Intent(this, AuthActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                        Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            });
+
         });
     }
 

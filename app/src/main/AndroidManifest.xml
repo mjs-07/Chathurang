@@ -22,6 +22,17 @@
             android:exported="false">
         </activity>
         <activity
+            android:hardwareAccelerated="true"
+            android:name=".AuthActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="true">

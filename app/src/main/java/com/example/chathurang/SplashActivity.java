@@ -26,7 +26,12 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                Intent intent = new Intent(SplashActivity.this, AuthActivity.class);
+                startActivity(intent);
+
+                // Apply smooth fade transition
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
                 finish();
             }
 
